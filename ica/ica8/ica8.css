@@ -1,0 +1,35 @@
+body{
+    background-color: khaki;
+}
+#box1{
+    width: 25vw;
+    height: 20vh;
+    background-color: indianred;
+    transition: background-color 0.3s ease;
+}
+
+#box1:hover {
+    background-color: purple;
+}
+
+#box2{
+    width: 25vw;
+    height:20vh;
+    position: relative;
+    background-color: orangered;
+    animation: box2move 2s infinite alternate;
+}
+
+/*MDN Web Docs:0% indicates the first moment of the animation sequence, while 100% indicates the final state of the animation. 
+Because these two times are so important, they have special aliases: from and to.*/
+@keyframes box2move{
+    from {
+        margin-left: 100%;
+        width: 25%;
+      }
+    
+      to {
+        margin-left: 0%;
+        width: 25%;
+      }
+    }
