@@ -1,0 +1,58 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: cornflowerblue;
+    font-family:'Kanit', sans-serif;
+}
+h1 {
+    color: floralwhite
+}
+nav{
+    height: 50vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:30px;
+    background-color:floralwhite;
+    transition: background-color 0.5s ease;
+}
+nav a{
+    width:10vw;
+    text-align: center;
+    text-decoration: none;
+    color:black;
+}
+
+nav:hover {
+    background-color: pink;
+}
+
+img{
+    width:30vw;
+    height: 30vh;
+    padding-top: 5%;
+}
+
+#pink-ball{
+    background-color: pink;
+    width: 20px;
+    height:20px;
+    border-radius: 50%;
+    position: absolute;
+    left:5vw;
+    top:0;
+    animation: pink-ball 2s infinite alternate;
+}
+
+@keyframes pink-ball{
+    from {
+        margin-left: 85%;
+        width: 1%;
+      }
+    
+      to {
+        margin-left: 0%;
+        width: 1%;
+      }
+    }
