@@ -11,7 +11,7 @@
 <body>
     <nav>
         <div class="logo">
-            <img src="../wa12/images/quote trivia logo_drop shadow.png" alt="logo">
+            <img src="../wa12/images/quote_trivia_logo_drop shadow.png" alt="logo">
         </div>
         <ul>
             <li><a href="#home">Home</a></li>
@@ -22,23 +22,27 @@
     <div class="app-wrapper">
         <div class="app" id="app">
             <header>Famous Quotes: Guess the Author!</header>
-          <section class="quotes">
-            <div class="quote-text" id="js-quote-text"></div>
-            <div class="quote-text" id="js-answer-text"></div>
-            <img src="" alt="Author Image" id="js-author-image">
-          </section>
+            <section class="quotes">
+                <div class="quote-text" id="js-quote-text"></div>
+                <div class="quote-text" id="js-answer-text"></div>
+                <img src="#" alt="Author Image" id="js-author-image">
+            </section>
         </div>
 
         <section class="controls">
-          <button type="button" id="js-new-quote" class="new-quote button">
-            Give Me Another!
-          </button>
-          <button type="button" id="js-tweet" class="twitter button">
-            Show Answer but Lose Points
-          </button>
+            <button type="button" id="js-new-quote" class="new-quote button">
+                Give Me Another!
+            </button>
+            <button type="button" id="js-tweet" class="twitter button">
+                Show Answer but Lose Points
+            </button>
         </section>
-      </div>
 
-      <script src="../wa12/wa12.js"></script>
+        <section class="paragraph">
+            <p class="extension-explanation">Welcome to my Quote Trivia Generator! My extension is to display the Quote's Author's image as a hint. However, the API for this feature is still in beta and sadly doesn't display the image. The second extension then was to indicate that the user would "Lose Points" if they selected the <em>Show Answer</em> button. I used additional styling and updated the JavaScript so that the .app would turn red when the button was selected and would reset to the original color when the <em>New Quote</em> button is selected.</p>
+        </section>
+    </div>
+
+    <script src="../wa12/wa12.js"></script>
 </body>
 </html>

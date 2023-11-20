@@ -60,6 +60,7 @@ html {
     margin: 0;
   }
 
+ 
   .app-wrapper {
     display: flex;
     flex-direction: column;
@@ -150,6 +151,10 @@ html {
 .app.twitter-selected {
     background-color: rgb(255, 25, 25);
   }
+
+.extension-explanation {
+    padding:60px;
+}
   
   @media screen and (max-width: 600px) {
     .app {
@@ -160,7 +165,7 @@ html {
     }
   }
 
-/* animating the quote to flip when you hover over it*/
+/* midterm code to animate the quote to flip when you hover over it*/
   @keyframes flip {
     0% {
         transform: rotateY(0deg);

@@ -1,5 +1,5 @@
 const newBtn = document.querySelector('#js-new-quote').addEventListener('click', getQuote);
-const answerBtn = document.querySelector('#js-tweet').addEventListener('click', displayAnswer); // Change setAppColor to displayAnswer
+const answerBtn = document.querySelector('#js-tweet').addEventListener('click', displayAnswer);
 const authorImage = document.getElementById('js-author-image');
 const app = document.getElementById('app');
 
