@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>JSON: Task 1</title>
+    <style>
+        p {
+          color: purple;
+          margin: 0.5em 0;
+        }
+  
+        * {
+          box-sizing: border-box;
+        }
+      </style>
+      <link rel="stylesheet" href="../readingquiz/quiz13.css" />  
+    
+    </head>
+
+  <body>
+
+    <section class="preview">
+    </section>
+
+  </body>
+  <script>
+    const section = document.querySelector('section');
+
+    let para1 = document.createElement('p');
+    let para2 = document.createElement('p');
+    let motherInfo = 'The mother cats are called ';
+    let kittenInfo;
+    const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json';
+
+    //MDN Web Docs: Here we are fetching a JSON file across the network, parsing it, and 
+    //printing the data to the console. The simplest use of fetch() takes one argument — 
+    //the path to the resource you want to fetch — and does not directly return the JSON response body but instead returns a promise that resolves with a Response object.
+    
+    fetch(requestURL)
+      .then(response => response.json()) //changed .text to .json
+      .then(data => displayCatInfo(data))
+
+    function displayCatInfo(catData) {
+      let total = 0;
+      let male = 0;
+
+      // Add your code here
+      
+      catData.forEach(motherCat => { //outer loop to loop through the cats
+        motherInfo += motherCat.name + ', '; //add their names to the motherInfo variable string 
+
+        motherCat.kittens.forEach(kitten => { //inner loop to loop through all the kittens
+          total++; //add up the total of all/male/female kittens
+          if (kitten.gender === 'm') {
+            male++;
+          }
+        });
+      });
+
+      //0 is the starting index of the slice, and -2 is the ending idex not including the last 2 characters (the comma and space)
+      //motherInfo = motherInfo.slice(0, -2) + ' and ' + motherInfo.slice(-2);
+
+      if (motherInfo.endsWith(', ')) {
+        motherInfo = motherInfo.slice(0, -2);
+        const lastCommaIndex = motherInfo.lastIndexOf(', ');
+        motherInfo = motherInfo.slice(0, lastCommaIndex) + ' and ' + motherInfo.slice(lastCommaIndex + 2) + '.';
+        }
+
+      kittenInfo = `There are ${total} kittens in total. ${male} are male and ${total - male} are female.`;
+
+      // Don't edit the code below here!
+
+      para1.textContent = motherInfo;
+      para2.textContent = kittenInfo;
+    }
+
+    section.appendChild(para1);
+    section.appendChild(para2);
+  </script>
+
+</html>
