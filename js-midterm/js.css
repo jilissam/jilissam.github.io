@@ -1,0 +1,114 @@
+body {
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Navigation Bar */
+header {
+    position: fixed; 
+    width: 100%;
+    z-index: 1000; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #2326db;
+    font-family: 'Kanit', sans-serif;
+    font-size: 24px;
+    padding-right: 20px;
+}
+
+/* Styling the left and right sections of the webpage */
+.container {
+    display: flex;
+}
+
+.left-section, .right-section {
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.left-section {
+    flex: 1;
+    background: url('../js-midterm/images/ConnectPal.jpg') center/cover no-repeat;
+    background-color: #ebebff;
+    text-align: left;
+    padding: 50px;
+    color: #2326db;
+    position: relative;
+}
+
+.right-section {
+    flex: 2;
+    text-align: left;
+    padding: 50px;
+    background-color: white;
+}
+
+.right-section p {
+    color: gray;
+}
+
+.right-section h2 {
+    margin-bottom: 0;
+    padding-top: 50px;
+}
+
+h1 {
+    color: #2326db;
+    padding-top: 50px;
+}
+
+/* The Worst Number Enterer? CSS */
+#numberBoxes {
+    display: flex;
+}
+
+#numberBoxes input {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    color: #2326db;
+    background-color: #f7f7f7;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+#set-button, #restart-button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-color: #2326db;
+    border: 2px solid white;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+}

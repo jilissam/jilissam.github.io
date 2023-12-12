@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Kanit:wght@300;400;600&family=Rowdies:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../js-midterm/js.css">
+    <title>JS Project</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../js-midterm/images/ConnectPal_Logo2.png" alt="ConnectPal Logo">
+            </div>
+            <ul>
+                <li><a href="#">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="left-section">
+            <h1>Welcome to a <em>slightly</em> new way to connect!</h1>
+            <p>ConnectPal transforms phone numbers into dynamic profiles to foster better connections. Just enter your phone number to get started!</p>
+        </div>
+
+        <div class="right-section">
+            <h2>What's Your Mobile Number?</h2>
+            <p>Set each digit to match your phone number. If the digit does not match, please press restart.</p>
+            <div id="numberBoxes">
+                <input type="text" class="phone-input" id="box1" readonly>
+                <input type="text" class="phone-input" id="box2" readonly>
+                <input type="text" class="phone-input" id="box3" readonly>
+                <input type="text" class="phone-input" id="box4" readonly>
+                <input type="text" class="phone-input" id="box5" readonly>
+                <input type="text" class="phone-input" id="box6" readonly>
+                <input type="text" class="phone-input" id="box7" readonly>
+                <input type="text" class="phone-input" id="box8" readonly>
+                <input type="text" class="phone-input" id="box9" readonly>
+                <input type="text" class="phone-input" id="box10" readonly>
+            </div>
+            <button id="set-button" onclick="setNumber()">Set Digit</button>
+            <button id="restart-button" onclick="restart()">Restart</button>
+        </div>
+
+    </div>
+
+  <script src="../js-midterm/js.js"></script>
+</body>
+</html>
