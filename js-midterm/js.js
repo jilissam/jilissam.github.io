@@ -4,7 +4,7 @@ let timer;
 
 const rollDuration = 400; //duration that the numbers 0-9 will appear
 const rollInterval = 300; //timing between each number appearign
-const timerDuration = 11000; // timer
+const timerDuration = 13000; // timer
 
 //Start Rolling Function: Making 0-9 roll through in order for each box
 const digits = Array.from({ length: 10 }, (_, index) => index);
