@@ -1,17 +1,57 @@
 let currentBox = 1;
+let rollingInterval;
+let timer;
+
+const rollDuration = 400; //duration that the numbers 0-9 will appear
+const rollInterval = 300; //timing between each number appearign
+const timerDuration = 11000; // timer
+
+//Start Rolling Function: Making 0-9 roll through in order for each box
+const digits = Array.from({ length: 10 }, (_, index) => index);
+
+function startRolling() {
+    let index = 0;
+
+    rollingInterval = setInterval(function () {
+        const currentBoxElement = document.getElementById(`box${currentBox}`);
+        currentBoxElement.value = digits[index];
+
+        index = (index + 1) % digits.length;
+    }, rollInterval);
+}
+
+//Stop Rollling Function
+function stopRolling() {
+    clearInterval(rollingInterval);
+    const currentBoxElement = document.getElementById(`box${currentBox}`);
+    
+    const displayedDigit = digits[currentBoxElement.value] !== undefined ? digits[currentBoxElement.value] : 0;
+    
+    currentBoxElement.value = displayedDigit;
+}
+
+
 
 function setNumber() {
-    const currentBoxElement = document.getElementById(`box${currentBox}`);
-    const randomNumber = Math.floor(Math.random() * 10);
-    
-    currentBoxElement.value = randomNumber;
+    stopRolling();
 
-    if (currentBox < 10) {
+    const currentBoxElement = document.getElementById(`box${currentBox}`);
+    const displayedDigit = digits[parseInt(currentBoxElement.value)];
+    currentBoxElement.value = displayedDigit;
+
         currentBox++;
+    currentBox++;
+        } else {
+            showTimesUpPopup();
+            restart();
+        }
     } else {
-        alert('All digits have been set! Next, lets verify your number.');
+        startRolling();
     }
 }
+
+
+
 
 function restart() {
     currentBox = 1;
@@ -19,5 +59,40 @@ function restart() {
         const boxElement = document.getElementById(`box${i}`);
         boxElement.value = '';
     }
+
+    stopRolling(); 
+    clearInterval(timer); 
+    startRolling();
+    startTimer();
 }
 
+function startTimer() {
+    timer = setTimeout(function () {
+        showTimesUpPopup();
+        restart();
+    }, timerDuration);
+}
+
+function showTimesUpPopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'flex';
+}
+
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none';
+    restart();
+}
+
+function showSuccessPopup() {
+    const successPopup = document.getElementById('success-popup');
+    successPopup.style.display = 'flex';
+}
+
+function closeSuccessPopup() {
+    const successPopup = document.getElementById('success-popup');
+    successPopup.style.display = 'none';
+}
+
+startRolling();
+startTimer();

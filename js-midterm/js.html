@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Kanit:wght@300;400;600&family=Rowdies:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../js-midterm/js.css">
     <title>JS Project</title>
@@ -23,7 +24,7 @@
     <div class="container">
         <div class="left-section">
             <h1>Welcome to a <em>slightly</em> new way to connect!</h1>
-            <p>ConnectPal transforms phone numbers into dynamic profiles to foster better connections. Just enter your phone number to get started!</p>
+            <h3>ConnectPal transforms phone numbers into dynamic profiles to foster better connections. Just enter your phone number to get started!</h3>
         </div>
 
         <div class="right-section">
@@ -43,6 +44,24 @@
             </div>
             <button id="set-button" onclick="setNumber()">Set Digit</button>
             <button id="restart-button" onclick="restart()">Restart</button>
+        </div>
+
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <!-- <i class="fa-light fa-alarm-clock"></i> -->
+                <h2>Times Up!</h2>
+                <h3>For security purposes, you have a limited time to enter your phone number.</h3>
+                <button onclick="closePopup()">Okay</button>
+            </div>
+        </div>
+
+        <div id="success-popup" class="popup">
+            <div class="popup-content">
+               <!-- <i class="fa-duotone fa-ghost" style="--fa-primary-color: #2326aa; --fa-secondary-color: #2326db;"></i> --> 
+                <h2>Success!</h2>
+                <h3>You successfully submitted your number.</h3>
+                <button onclick="closeSuccessPopup()">Okay</button>
+            </div>
         </div>
 
     </div>
