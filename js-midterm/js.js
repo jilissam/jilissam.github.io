@@ -39,8 +39,12 @@ function setNumber() {
     const displayedDigit = digits[parseInt(currentBoxElement.value)];
     currentBoxElement.value = displayedDigit;
 
-        currentBox++;
     currentBox++;
+
+    if (currentBox > 10) {
+        if (timer) {
+            showSuccessPopup();
+            clearTimeout(timer);
         } else {
             showTimesUpPopup();
             restart();
